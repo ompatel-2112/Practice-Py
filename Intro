@@ -1,0 +1,41 @@
+Domain - Ai + Python
+
+AI - A real life work 
+Python - A technical stuff
+
+what is programme - set of instruction Designed to Achieve a specific Goal
+
+Compiler 
+
+work As Translater which conver Higer level Lang (User language) Into Lower Level lang ( Machine Understable ) 
+
+User [ 0-9 ,A-Z , a-z , Spe Character ]  -------->  [101101] Binnary
+      High level                                       Low level
+
+Ascii Number - A nuber which is set to Alphabet to conver High into Low level ex. A = 65 , a = 99
+
+Types 
+
+compiler        : High --> Lower --> Full code --> Byte    Compile first and Execute              
+Interpriter     : High --> Lower --> Line by Line --> Byte    Compile + Execute
+
+Domain - Finance , Medical, Healthcare , Automation , Teaching
+
+Why Python ??
+
+Easy to learn use English Syntax Higly Versatile Across Industries and Supported by massive Library Ecosystem.
+versatile use - AI  ML DL DE DS BD CWAI ACV RNN CNN NLPU Etc  ---> use Python
+
+Python - Interpriter Lang , Syntax Free
+
+POP - Procedure Oriented Programming 
+OOP - Object Oriented Programming
+
+DATA TYPE
+
+Numeric --> Int , Flot
+
+String --> Text , Img , Audio , Video 
+
+Boolian , Complex
+
