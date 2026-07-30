@@ -1,0 +1,28 @@
+What is String : String is An Immutable Sequence of Unicode Charactors Used to represent textual data.
+
+-> it is Immutable and We can Acces Individual characters using zero Based Indexing.
+
+Why string : Represent, store and Manipulate textual data.Because computer inherantly understand numbers , string serve as Bridge for human Readable
+
+How : by store and manipulate text , it is immutable so It Create new Object In Memory Rather Than Changing The Original One.
+
+-> we can use Indexing and Slicing and also perform String Operation.
+
+Real Life Example: 
+
+Website Content -> string
+Medical History -> string
+E-commerce -> string
+Social Media Platform -> string
+Gov Adhar card Details -> string 
+Banking Sector -> string
+
+Pros : Immutablity -> thrade safety
+
+Powerful Slicing -> Make it easy to Substring and Reversing
+
+compatable which is universal data base 
+
+Cons : Memory Overhead -> modefy a string Create a Completly New copy which Waste Ram during Iterative Operations 
+
+peformance Overhead -> Slover than other Because Its make Copy And Perform Operation.
