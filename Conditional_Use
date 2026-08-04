@@ -1,3 +1,31 @@
 What is Conditional Statement: 
 Conditional statements are used to control the flow of execution in a program based on specific conditions.
 They allow programs to execute different blocks of code depending on whether a condition evaluates to True or False.
+
+if Statement :
+is statement is used to Execute a Block of Code only whaen specified condition Evaluate True.
+
+if else Statement :
+if else statement is used to Execute one Block of Code When The condition is true and another Block the condition is false.
+
+Why :
+It makes Decision Making , Control the Flow of Execution,Allow Programs to Adupt Dynamically to different Inputs.
+
+Handling Real world data .
+Ex. Check Correct Respond , like a Password
+
+How : using if , elif ,else Keyword using operators
+
+Real life E.x : Cart Manage - E commerce
+
+if - Based on shoping give Discount
+elif - If Shoping is less than then How much Applicable
+else - safety if not minimum then not Discount
+
+-User Authentication
+-E-comm Diss
+-Banking Amount Transaction
+-Automatic door open close
+
+
+
