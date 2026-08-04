@@ -1,0 +1,28 @@
+Type of Operators :
+
+1.Arithmetic :
+
++ addition
+- Subtraction
+* Multiplication
+/ Division
+% modulo
+** Power
+// Return Decimal Ex 98.3 return 3
+
+2.Logical:
+
+and 
+or 
+
+3.Compare:
+
+<   less than
+>   Grater than
+>=  Graterthan Equal
+<=  Lessthan Equal
+!=  Not Equal
+==  Is Eqal
+
+
+
