@@ -1,0 +1,20 @@
+What is Loop:
+A programming Rule that Repeats a set of steps over and over
+
+- A loop Runs the same code over and over again , as long as the Condition is true.
+
+Why :we use loops to Repeat a set of instructions
+
+-Reduce Coad duplication
+Process large amount of Data Efficiently
+To save time and easy readablity
+
+How : Loop is a programming control structure used to run a Block of code over and over again until specific Condition.
+
+Real-life Ex :
+-Music Player - play songs in loop
+-Alarm snoozing 
+-sensor Checking
+-operating system 
+-light blink neavigation
+-Production fil the pottle in loop
