@@ -8,6 +8,8 @@ Type Of Collection Data Type :
 3.Set
 4.Dictionary
 
+
+
 1.List : Lists are ordered mutable sequences that can be changed after they have been created by adding, removing, or changing objects.
 Lists can be declared by using square brackets “[]” following the variable name.
 
@@ -46,6 +48,8 @@ Cons:
 Slower lookups — O(n) check (in operator)
 Uses more memory than tuple for same data (mutability overhead)
 Not hashable — can't be used as a dictionary key
+
+
 
 2.Tuple : Tuples are ordered immutable sequence that stores multiple items in a single variable, meaning it cannot be changed after 
 it has been created. A tuple can be created by a pair of parenthesis and comma-separated objects, following the variable name.
@@ -108,3 +112,86 @@ Cannot modify, add, or remove elements once created
 Fewer built-in methods than list (no append, sort, etc.)
 Less flexible for dynamic/growing data
 
+
+
+3.set : Sets are an unordered immutable set of unique objects that do not support duplicated objects and as such, they cannot be indexed.
+
+-Sets can be created by using curly brackets following the variable names or using the set() constructor.
+
+-Mathematical operations such as intersection, union, difference, and symmetric difference, can be carried out on set data types. Sets can
+ be created by using curly brackets following the variable names or using the set() constructor.
+
+S= {1,1,10,'abc'}
+
+-Unindex
+-Unorderd
+-Duplicate value not alowed
+-Unique(Haching Key)
+-we can Perform Add or remove
+-Ex Mutual Frinend
+    User Alrady Enter or not
+
+   unique_ips = {"192.168.1.1", "192.168.1.2", "192.168.1.1"}  
+   # duplicate auto-removed → {"192.168.1.1", "192.168.1.2"}
+
+   Spam/blocklist filtering — checking if an email/IP exists in a huge blocklist — O(1) lookup speed.
+
+Why :
+
+- eliminate duplicates automatically
+- super-fast membership testing (in)
+- You need mathematical set operations (union, intersection, difference)
+- Order doesn't matte
+
+Pros:
+
+Automatically removes duplicates
+Extremely fast membership testing — O(1) average
+Supports powerful set math (union, intersection, difference, symmetric difference)
+Mutable — can add/remove items
+
+Cons:
+
+Unordered — no indexing, no guaranteed order (can't do set[0])
+Elements must be hashable (no lists/dicts inside a set)
+Not ideal when you need to preserve insertion order or duplicates
+
+
+
+4.Dictionary : A dictionary is an unordered set of key/value pairs. Each unique key has a value
+- Values in dictionary items can be of any data type.
+  Ditionaries are mutable, this allows items to be added or removed even after the dictionary has been created.
+  duplicate Keys are Not Allowed in Dictinory , because the values will overwrite and the most recent value will 
+  be returned And Value Can be same.
+
+Employ = {"Ravi": "1001", "Het": "1002"}
+
+- X = { "  " : "  "}
+
+- Base on key Index
+- Key-Value pair 
+- Key must be unique
+- Value Duplicate Allow
+- Support Json Formate
+- Mutable
+- Ex TravelGo
+     Myntra
+     Employ Data
+     Student Result
+
+Why :
+
+- to map/associate data (like a real-world lookup table)
+- When need fast retrieval by a unique key instead of numeric index
+- structured data (like a JSON object
+
+Pros :
+
+- Flexible values (can store lists, dicts, objects, etc.
+- maps real-world key→value relationships ( easy to Understand )
+- can Access Using Key
+
+Cons :
+
+- More Memory Overhade Than List,Tuple
+- No Indexed Based Access
