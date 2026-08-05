@@ -1,0 +1,110 @@
+Collection data Type : Python has four built-in collection data types used to store multiple items in a single variable.
+Each has a specific personality — ordered vs unordered, mutable vs immutable, unique vs duplicate-allowing — and User can
+Choose That  Based On his Requirement.
+
+Type Of Collection Data Type :
+1.List
+2.Tuple
+3.Set
+4.Dictionary
+
+1.List : Lists are ordered mutable sequences that can be changed after they have been created by adding, removing, or changing objects.
+Lists can be declared by using square brackets “[]” following the variable name.
+
+- Indexing Allow
+- Ordaring Allow
+- Allow Duplicate Value
+- Mutable (We can Perform Insert,Update,Delete)
+
+Real Life Example :
+- Grocessary Manage 
+- Todo list
+- Cricket Match Scoard board
+
+Syntax : S = [1,1,'a',10.8,'abc']
+Can Perform Slicing : S[0]
+                      S[2:4]
+                      S[3: ]
+                      S[4]=99
+
+Why : Use a list when you need a collection that:
+
+-Maintains insertion order
+-Might grow/shrink over time
+-Can contain duplicate values
+-Needs to be accessed/modified by index
+
+Pros :
+
+Ordered — index-based access 
+Mutable — easy to add/remove/update
+Allows duplicates — good for logs, sequences
+built-in methods (sort, append, extend, pop)
+
+Cons:
+
+Slower lookups — O(n) check (in operator)
+Uses more memory than tuple for same data (mutability overhead)
+Not hashable — can't be used as a dictionary key
+
+2.Tuple : Tuples are ordered immutable sequence that stores multiple items in a single variable, meaning it cannot be changed after 
+it has been created. A tuple can be created by a pair of parenthesis and comma-separated objects, following the variable name.
+
+Syntax : S = (1,1,'a',10.8,'abc')
+
+- Single object tuples are referred to as a singleton. It can be created by using a trailing comma after the object, or else python 
+identifies it as a string.
+
+fruits=("Orange")
+Print(type(fruits)
+Out Put:
+type<Str>
+
+fruits=("Orange",)
+Print(type(fruits)
+Out Put:
+type<classTuple>
+
+- Commas are what makes a tuple, as parentheses are optional
+Ex S = 'a',1,'abc',23.5
+   Print(type(S))
+   Out Put:
+   type<class tuple>
+- Identify Using ()
+- indexing Allow
+- Ordering Allow
+- Allow Duplicate Valuse
+- Immutable Data type
+- Ex. Adharcard No
+      Bank Id No
+      Phone IMEI No
+      Location Cordinate
+
+Syntax : S = (1,1,'a',10.8,'abc')
+Can Perform Slicing : S[0]
+                      S[2:4]
+                      S[3: ]
+                      S[4]=99
+- Cn Not Perform Append or Update delete or Update
+Another Way - if we Type cast tuple in to list and store in Another variable than we can Perform
+
+Why: Use a tuple when:
+
+Data should NOT change once created (data integrity/safety)
+You want faster performance than a list
+You need a hashable, fixed collection (e.g., as a dict key)
+You're representing a fixed structure, like coordinates or a record
+
+Pros : 
+
+Immutable — protects data from accidental modification
+Faster than lists
+Hashable — usable as dictionary keys / set elements
+Great for fixed-structure records
+
+Cons :
+
+Cannot modify, add, or remove elements once created
+Fewer built-in methods than list (no append, sort, etc.)
+Less flexible for dynamic/growing data
+
