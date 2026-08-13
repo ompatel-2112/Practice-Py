@@ -1,0 +1,63 @@
+UDF : These type of functions are defined by the user using the “def” keyword; user-defined functions only run when they are called.
+Data can also be passed into the functions in the form of parameters and arguments.
+
+Parameters and arguments in user-defined functions
+parameters:
+A parameter is a placeholder that allows the code in the function to access the arguments for a particular function’s invocation.
+We can also have multiple parameters in a python function.
+arguments:
+An argument is a value that is passed into the function as its input when we call the function.
+Ex:
+
+def add_num(num1,num2): #num1 and num2 are parameters
+  added = num1 + num2
+  print(added)
+
+#Function call
+add_num(4,3) #4 and 3 are arguments
+
+Return Values
+-> The “return” function can be used to return and print the result computation that is carried out when a function is called instead of the “print” statement.
+Ex:
+
+def fact(n):
+    if n==0:
+        return 1
+    else:
+        return n*fact(n-1)
+
+Result=fact(int(input("enter num to find factorial:")))
+print(Result)
+
+Why: We use user-defined functions to write reusable blocks of code, break large programs into smaller parts, and make debugging and maintenance much easier.
+- Code Reusability: Write a logic block once and call it multiple times instead of rewriting duplicate code
+- Easier Debugging: Isolate errors quickly within a specific function rather than hunting through an entire script
+- Better Readability: Keep the main program clean, organized, and easy for other developers to understand
+- Easy to Update or maintenance
+
+How :
+
+Define the function: Use the def keyword, the function name, and parameters in brackets.
+Write the code: Add the actions you want the program to run inside the indented block.
+Return a result: Use the return keyword to send back the final value.
+Call the function: Type the function name with your values (arguments) in parentheses to run it
+
+Real life Example:
+- ATM machine use same code for check avelable balance , cash widhrow etc.
+- E-commerce use calculate function to for total cart item and count taxes
+- Inventory systems use a simple function to calculate how many days are left before a food product expires
+- calculator use function for each time calculate
+- tax and chages calculaton on medical or hospital system
+
+Pros :
+- Code Reusability
+- Easier Debugging
+- Easy to update 
+- Batter Readability
+
+Cons :
+- Naming Conflicts: Poorly named functions can mistakenly overwrite standard library function
+- Complex to understand if use for return to multiple functions 
+
+
+
