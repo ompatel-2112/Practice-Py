@@ -1,0 +1,118 @@
+File IO in Python : File I/O (Input/Output) is how Python programs read data from files and write data to files on your computer's storage.
+Instead of data disappearing when your program ends (like variables in memory), file I/O lets you persist data — save it, retrieve it later,
+share it, or process it.
+
+Python provides built-in functions and methods to facilitate file handling, making it easier for developers to perform these tasks efficiently.
+
+Why :
+
+Persistence: Variables vanish when a program exits. Files let data survive between runs.
+Data exchange: Programs need to read config files, logs, CSVs, exchange data with other programs/systems.
+Working with large data: You can't always hold everything in memory (RAM); files let you stream data in chunks.
+Configuration & logging: Apps read settings from files and write logs to track what happened
+
+How :
+
+- Opening File in Python :
+Before you can read from or write to a file, you need to open it. Python uses the open() function for this purpose. The open() function requires 
+two arguments: the name of the file and the mode in which you want to open the file.
+
+    file = open('example.txt', 'r')
+- In this example, example.txt is the name of the file, and 'r' is the mode for reading. Other modes include 'w' for writing, 'a' for appending,
+  and 'b' for binary mode
+
+- 'r' - read mode :
+
+Reading from a File :
+Reading from a file is a common task in many applications. Python provides several methods to read from a file:
+
+Reading the Entire File:
+The simplest way to read a file is to read its entire content at once.
+
+    file = open('example.txt', 'r')
+    content = file.read()
+    print(content)
+    file.close()
+
+Reading Line by Line:
+If you prefer to read the file line by line, Python offers the readline() method.
+
+    file = open('example.txt', 'r')
+    line = file.readline()
+    while line:
+        print(line, end='')
+        line = file.readline()
+    file.close()
+
+
+- 'w' - write mode:
+
+Writing to a File:
+Writing to a file is as straightforward as reading from it. You need to open the file in write mode ('w') or append mode ('a').
+
+To write data to a file, you use the write() method.
+
+    file = open('example.txt', 'w')
+    file.write("Hello, world!")
+    file.close()
+
+- Writing Multiple Lines
+
+If you need to write multiple lines, you can use the writelines() method.
+
+    lines = ["First line\n", "Second line\n", "Third line\n"]
+    with open('example.txt', 'w') as file:
+    file.writelines(lines)
+
+
+File Modes:
+
+'r': Read mode (default). Opens the file for reading.
+'r+': Read and write mode.
+'rb': Read in Binary
+'rb+': Read and write in Binary  [ex. image,Audio,video]
+
+'w': Write mode. Opens the file for writing, truncating the file first.
+'w+': Write and Read mode.
+'wb': Write in Binary
+'wb+': write and read in binary
+
+'a': Append mode. Opens the file for writing, appending to the end
+'a+': Append and Read mode.
+'ab': Append in Binary
+'ab+': Append and read in binary
+
+--> write and append mode create new file if file not exist
+
+Function :
+
+open()-open file
+close()-close file
+read()-read data from file
+write()-write data in file
+tell()-give current position of Index
+seel()-offset- character index start from 1 2 3 ...
+      -cursor pointer -seel(0)-start
+                      -seel(1)-current
+                      -seel(2)-end
+Use case :
+
+- A billing system writing invoices to .txt/.csv files
+- A web scraper saving scraped data for later analysis
+- An app reading a config.json or .env file for settings
+- A logging system appending error messages to app.log
+
+Pros :
+
+- Data persistence — information isn't lost when the program ends
+- Simplicity — Python's syntax (open, with) is beginner-friendly
+- Flexibility — works with text, binary, CSV, JSON, and more
+- Interoperability — files can be shared across programs, languages, and systems
+- Low resource cost — doesn't require a database setup for small-scale needs
+
+Cons :
+- Slower than memory operations — disk I/O is much slower than RAM access
+- No built-in structure/querying — unlike databases, you can't easily search/filter without reading the whole file
+- Concurrency issues — multiple programs/processes writing to the same file can cause conflicts or data corruption
+- Manual error handling — you must handle missing files, permission errors, encoding issues (try/except needed)
+- Not ideal for large-scale or relational data — better to use databases (SQLite, PostgreSQL) for complex, large, or multi-user data
