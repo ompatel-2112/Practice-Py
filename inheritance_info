@@ -1,0 +1,397 @@
+What is Inheritance?
+
+Inheritance is a feature of Object-Oriented Programming (OOP) that allows one class (called the Child class or Derived class) to reuse the properties (attributes) and behaviors (methods) of another class (called the Parent class or Base class).
+
+Think of it like a family:
+- A Parent class has some features.
+- A Child class automatically gets those features, and can also add its own new features or change existing ones.
+
+ex
+class Animal:          # Parent class
+    def eat(self):
+        print("I can eat")
+
+class Dog(Animal):      # Child class inherits from Animal
+    def bark(self):
+        print("I can bark")
+
+d = Dog()
+d.eat()   # inherited from Animal
+d.bark()  # defined in Dog
+
+
+Output
+
+I can eat
+I can bark
+
+
+Notice: `Dog` never wrote an `eat()` method, but it still got it — for free — from `Animal`.
+
+2. Why do we use Inheritance?
+
+| Code Reusability | You don't have to write the same code again and again. Common logic stays in one place (the parent class). |
+| Saves Time & Effort | Less code to write means faster development. |
+| Easy Maintenance | If you need to fix or update common behavior, you only change it in the parent class. |
+| Real-World Modeling | Real-life relationships (like "a Car IS-A Vehicle") are easy to represent in code. |
+| Extensibility | You can add new features in the child class without touching the parent class. |
+| Supports Polymorphism | Inheritance is the foundation that allows method overriding and polymorphism to work. |
+
+
+
+How does Inheritance work in Python?
+
+python
+class ParentClass:
+    # parent code
+    pass
+
+class ChildClass(ParentClass):   # pass parent class name in parentheses
+    # child code
+    pass
+```
+
+### Key building blocks
+
+a) Accessing Parent Methods/Attributes
+The child class automatically has access to all non-private methods and attributes of the parent.
+
+b) The super() Function
+Used inside the child class to call the parent class's methods (especially `__init__`).
+
+python
+class Person:
+    def __init__(self, name):
+        self.name = name
+
+class Student(Person):
+    def __init__(self, name, grade):
+        super().__init__(name)   # calls Person's __init__
+        self.grade = grade
+
+s = Student("Riya", "10th")
+print(s.name, s.grade)   # Riya 10th
+
+
+c) Method Overriding
+A child class can redefine a method that already exists in the parent class, to give it a new behavior.
+
+python
+class Animal:
+    def sound(self):
+        print("Some generic sound")
+
+class Cat(Animal):
+    def sound(self):              # overriding parent method
+        print("Meow")
+
+Cat().sound()   # Meow
+
+
+d) `isinstance()` and `issubclass()`
+Used to check inheritance relationships.
+python
+print(isinstance(s, Person))     # True
+print(issubclass(Student, Person)) # True
+
+4. Types of Inheritance in Python
+
+Python supports **5 types** of inheritance:
+
+4.1 Single Inheritance
+One child class inherits from one parent class.
+
+```python
+class Vehicle:
+    def start(self):
+        print("Vehicle started")
+
+class Car(Vehicle):
+    def drive(self):
+        print("Car is driving")
+```
+Diagram: `Vehicle → Car`
+
+---
+
+4.2 Multiple Inheritance
+One child class inherits from **more than one** parent class.
+
+```python
+class Father:
+    def skill1(self):
+        print("Father: Gardening")
+
+class Mother:
+    def skill2(self):
+        print("Mother: Painting")
+
+class Child(Father, Mother):
+    pass
+
+c = Child()
+c.skill1()
+c.skill2()
+```
+Diagram: `Father, Mother → Child`
+
+---
+
+4.3 Multilevel Inheritance
+A chain of inheritance — a class inherits from a child class, which itself inherited from another parent.
+
+```python
+class Grandparent:
+    def house(self):
+        print("Owns a house")
+
+class Parent(Grandparent):
+    def car(self):
+        print("Owns a car")
+
+class Child(Parent):
+    def bike(self):
+        print("Owns a bike")
+
+c = Child()
+c.house()
+c.car()
+c.bike()
+
+Diagram:** `Grandparent → Parent → Child`
+
+4.4 Hierarchical Inheritance
+Multiple child classes inherit from a single parent class.
+
+```python
+class Shape:
+    def info(self):
+        print("I am a shape")
+
+class Circle(Shape):
+    pass
+
+class Square(Shape):
+    pass
+```
+Diagram: `Shape → Circle`, `Shape → Square`
+
+
+
+4.5 Hybrid Inheritance
+A combination of two or more types of inheritance (e.g., Multiple + Multilevel).
+
+```python
+class Animal:
+    def eat(self):
+        print("Eats food")
+
+class Mammal(Animal):
+    def walk(self):
+        print("Walks on land")
+
+class Aquatic:
+    def swim(self):
+        print("Can swim")
+
+class Dolphin(Mammal, Aquatic):   # Hybrid: multilevel + multiple
+    pass
+
+d = Dolphin()
+d.eat()
+d.walk()
+d.swim()
+```
+
+5. Pros and Cons of Inheritance
+
+Pros
+
+1. **Code Reusability** – Avoid rewriting common logic.
+2. **Improved Code Organization** – Related classes are logically grouped.
+3. **Saves Development Time** – Build on existing, tested code.
+4. **Easy to Extend** – Add new features via child classes without modifying parent code.
+5. **Supports Real-World Relationship Modeling** – Natural "IS-A" relationships.
+6. **Enables Polymorphism** – Same method name, different behavior across classes.
+
+Cons
+
+1. Tight Coupling – Child class depends heavily on the parent; changes in parent can break child.
+2. Increased Complexity – Deep inheritance chains (multilevel/hybrid) can be hard to read and debug.
+3. Diamond Problem – In multiple inheritance, if two parents have the same method name, it can create confusion (Python solves this using **MRO** — Method Resolution Order — but it's still tricky for beginners).
+4. Inherited Unwanted Features – Child class may inherit methods/attributes it doesn't actually need.
+5. Harder to Modify Later – Changing the parent class structure can unintentionally affect many child classes.
+
+
+6. Real-Life Examples (5+)
+
+Example 1: Vehicle System
+
+```python
+class Vehicle:
+    def __init__(self, brand):
+        self.brand = brand
+    def general_info(self):
+        print(f"This vehicle is made by {self.brand}")
+
+class Car(Vehicle):
+    def wheels(self):
+        print("A car has 4 wheels")
+
+class Bike(Vehicle):
+    def wheels(self):
+        print("A bike has 2 wheels")
+
+car = Car("Toyota")
+car.general_info()
+car.wheels()
+```
+*Real-life link:* Cars and Bikes are both Vehicles — they share brand info but differ in wheel count.
+
+---
+
+Example 2: Bank Account System
+
+```python
+class BankAccount:
+    def __init__(self, balance):
+        self.balance = balance
+    def show_balance(self):
+        print(f"Balance: ₹{self.balance}")
+
+class SavingsAccount(BankAccount):
+    def add_interest(self):
+        self.balance += self.balance * 0.05
+        print("Interest added")
+
+acc = SavingsAccount(1000)
+acc.add_interest()
+acc.show_balance()
+```
+*Real-life link:* A Savings Account IS-A Bank Account, but with an extra interest feature.
+
+---
+
+Example 3: Employee Management System
+
+```python
+class Employee:
+    def __init__(self, name, salary):
+        self.name = name
+        self.salary = salary
+    def details(self):
+        print(f"{self.name} earns ₹{self.salary}")
+
+class Manager(Employee):
+    def __init__(self, name, salary, team_size):
+        super().__init__(name, salary)
+        self.team_size = team_size
+    def details(self):
+        super().details()
+        print(f"Manages a team of {self.team_size}")
+
+m = Manager("Aditi", 80000, 5)
+m.details()
+```
+*Real-life link:* Every Manager is an Employee, but with additional responsibilities.
+
+---
+
+Example 4: School Management (Person → Student/Teacher)
+
+```python
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+class Student(Person):
+    def study(self):
+        print(f"{self.name} is studying")
+
+class Teacher(Person):
+    def teach(self):
+        print(f"{self.name} is teaching")
+
+s = Student("Kabir", 15)
+t = Teacher("Mr. Sharma", 40)
+s.study()
+t.teach()
+```
+*Real-life link:* Hierarchical inheritance — Students and Teachers are both People, but with different roles.
+
+---
+
+Example 5: Smartphone (Hybrid Inheritance)
+
+```python
+class ElectronicDevice:
+    def power_on(self):
+        print("Device powered on")
+
+class Camera:
+    def take_photo(self):
+        print("Photo captured")
+
+class CommunicationDevice(ElectronicDevice):
+    def make_call(self):
+        print("Calling...")
+
+class Smartphone(CommunicationDevice, Camera):
+    def browse_internet(self):
+        print("Browsing the internet")
+
+phone = Smartphone()
+phone.power_on()
+phone.make_call()
+phone.take_photo()
+phone.browse_internet()
+```
+*Real-life link:* A Smartphone combines features of a communication device and a camera — a real hybrid inheritance example.
+
+---
+
+Example 6 : Animal Kingdom
+
+```python
+class Animal:
+    def breathe(self):
+        print("Breathing")
+
+class Bird(Animal):
+    def fly(self):
+        print("Flying in the sky")
+
+class Sparrow(Bird):
+    def chirp(self):
+        print("Chirping")
+
+sp = Sparrow()
+sp.breathe()
+sp.fly()
+sp.chirp()
+```
+*Real-life link:* Multilevel inheritance — Sparrow → Bird → Animal, just like biological classification.
+
+---
+
+Quick Summary Table
+
+| Type | Structure | Example |
+|---|---|---|
+| Single | 1 Parent → 1 Child | Vehicle → Car |
+| Multiple | 2+ Parents → 1 Child | Father, Mother → Child |
+| Multilevel | Chain of classes | Grandparent → Parent → Child |
+| Hierarchical | 1 Parent → 2+ Children | Shape → Circle, Square |
+| Hybrid | Combination of above | Smartphone example |
+
+---
+
+Key Takeaways
+
+- Inheritance = **"IS-A" relationship** (a Car IS-A Vehicle).
+- Use `super()` to call the parent class's constructor/methods.
+- Overriding lets a child class **customize** inherited behavior.
+- Python supports 5 types of inheritance — know when to use which.
+- Don't overuse deep inheritance chains — keep designs simple and readable.
+- Practice by mapping **real-world relationships** to classes — it makes the concept click faster!
